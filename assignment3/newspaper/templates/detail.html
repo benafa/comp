@@ -1,0 +1,33 @@
+<style>
+h1 {
+    color: red;
+}
+h2 {
+	color: green;
+}
+body {
+    background-color: #b1e5df;
+}
+</style>
+
+<body>
+<h1>{{ article.title }}</h1>
+
+<h2> {{article.subtitle}}
+
+<h3>
+  By
+  {% for contributor in article.contributors.all %}
+
+     {{ contributor.first_name }} {{ contributor.last_name }},
+ 
+  {% endfor %}
+</h3>
+<p>
+    {{article.pub_date}}
+</p>
+
+<p>
+    {{article.text}}
+</p>
+</body>

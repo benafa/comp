@@ -1,0 +1,26 @@
+<style>
+h1 {
+    color: blue;
+    text-align: center;
+}
+h2 {
+	color: black;
+}
+body {
+    background-color: #578443;
+}
+</style>
+
+<body>
+<h1> Home Page </h1>
+<h2> List of Articles </h2>
+{% if latest_article_list %}
+    <ul>
+    {% for article in latest_article_list %}
+        <li> {{article.pub_date}} <a href="/content/{{ article.id }}/"> {{ article}}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No articles are available.</p>
+{% endif %}
+</body>
